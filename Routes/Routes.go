@@ -2,15 +2,14 @@ package Routes
 
 import (
 	"github.com/puwarinnueng/gin-marketplace/Controllers"
-	"github.com/puwarinnueng/gin-marketplace/Test"
-
+	"github.com/puwarinnueng/gin-marketplace/Pages"
 	"github.com/gin-gonic/gin"
 )
 
 //SetupRouter ... Configure routes
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	r.GET("/get", Test.Get)
+	r.GET("/get", Pages.Get)
 	grp1 := r.Group("/api")
 	{
 		grp1.GET("user", Controllers.GetUsers)

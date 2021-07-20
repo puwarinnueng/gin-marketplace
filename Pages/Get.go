@@ -1,12 +1,12 @@
-package controllers
+package Pages
 
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
-func Data(c *gin.Context){
+func Get(c *gin.Context){
    c.JSON(http.StatusOK, gin.H{
-	   "message" : "ok2",
+	   "message" : "ok",
    })
 }
