@@ -12,7 +12,7 @@ import (
 
 //GetUsers ... Get all users
 func GetUsers(c *gin.Context) {
-	var user []Models.User
+	var user []Models.Employee
 	err := Models.GetAllUsers(&user)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
@@ -23,7 +23,7 @@ func GetUsers(c *gin.Context) {
 
 //CreateUser ... Create User
 func CreateUser(c *gin.Context) {
-	var user Models.User
+	var user Models.Employee
 	c.BindJSON(&user)
 	err := Models.CreateUser(&user)
 	if err != nil {
@@ -37,7 +37,7 @@ func CreateUser(c *gin.Context) {
 //GetUserByID ... Get the user by id
 func GetUserByID(c *gin.Context) {
 	id := c.Params.ByName("id")
-	var user Models.User
+	var user Models.Employee
 	err := Models.GetUserByID(&user, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
@@ -48,7 +48,7 @@ func GetUserByID(c *gin.Context) {
 
 //UpdateUser ... Update the user information
 func UpdateUser(c *gin.Context) {
-	var user Models.User
+	var user Models.Employee
 	id := c.Params.ByName("id")
 	err := Models.GetUserByID(&user, id)
 	if err != nil {
@@ -65,7 +65,7 @@ func UpdateUser(c *gin.Context) {
 
 //DeleteUser ... Delete the user
 func DeleteUser(c *gin.Context) {
-	var user Models.User
+	var user Models.Employee
 	id := c.Params.ByName("id")
 	err := Models.DeleteUser(&user, id)
 	if err != nil {

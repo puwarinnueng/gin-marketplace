@@ -34,7 +34,7 @@ func main() {
 		fmt.Println("Status:", err)
 	}
 	defer Config.DB.Close()
-	Config.DB.AutoMigrate(&Models.User{})
+	Config.DB.AutoMigrate(&Models.Employee{})
 	r := Routes.SetupRouter()
 	//running
 	r.Run(":8080")
