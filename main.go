@@ -19,10 +19,11 @@ package main
 
 import (
 	"fmt"
-	"gin-server/Config"
-	"gin-server/Models"
-	"gin-server/Routes"
+	"github.com/puwarinnueng/gin-marketplace/Models"
+	"github.com/puwarinnueng/gin-marketplace/Routes"
+	"github.com/puwarinnueng/gin-marketplace/Config"
 	"github.com/jinzhu/gorm"
+	
 )
 
 var err error
@@ -36,5 +37,5 @@ func main() {
 	Config.DB.AutoMigrate(&Models.User{})
 	r := Routes.SetupRouter()
 	//running
-	r.Run()
+	r.Run(":8080")
 }

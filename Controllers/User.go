@@ -1,8 +1,11 @@
-package controllers
+package Controllers
 
 import (
-	"gin-server/Models"
 	"fmt"
+	
+	// "gin/Models"
+	"github.com/puwarinnueng/gin-marketplace/Models"
+
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

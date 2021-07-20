@@ -1,14 +1,17 @@
 package Routes
 
 import (
-	"gin-server/Controllers"
+	"github.com/puwarinnueng/gin-marketplace/Controllers"
+	"github.com/puwarinnueng/gin-marketplace/Test"
+
 	"github.com/gin-gonic/gin"
 )
 
 //SetupRouter ... Configure routes
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	grp1 := r.Group("/user-api")
+	r.GET("/get", Test.Get)
+	grp1 := r.Group("/api")
 	{
 		grp1.GET("user", Controllers.GetUsers)
 		grp1.POST("user", Controllers.CreateUser)
@@ -16,5 +19,8 @@ func SetupRouter() *gin.Engine {
 		grp1.PUT("user/:id", Controllers.UpdateUser)
 		grp1.DELETE("user/:id", Controllers.DeleteUser)
 	}
+
+
+
 	return r
 }
